@@ -21,12 +21,6 @@ The protocol leverages SyncIDs and Nillion's infrastructure to handle sensitive 
    - If they match, the encrypted message is revealed to the delivery node.
 5. **Decryption:** User’s device decrypts the message locally and sends it via WhatsApp or Telegram.
 
-## Security Features
-
-- **Local Decryption:** Sensitive data is decrypted only on the User's device.
-- **Data Privacy:** Logic matching occurs securely without exposing the User’s phone number.
-- **Decentralized Execution:** Uses Nillion’s infrastructure for secure off-chain computation.
-
 ## Usage
 
 Run the following commands to start the secure computation process:
