@@ -2,28 +2,36 @@
 
 ## Overview
 
-This repository showcases a secure communication protocol using Nillion's multi-party computation, focusing on data exchange between two parties: Sync (Initiator) and User (Responder).
-
-The protocol leverages SyncIDs and Nillion's infrastructure to handle sensitive information securely, ensuring that decryption occurs only on the User's local device.
+This project demonstrates secure communication and computation using Nillion's infrastructure, focusing on interactions between two parties: Sync (Initiator) and User (Responder). Nillion enables the encrypted storage and secure handling of sensitive data during the communication process.
 
 ## Key Components
 
-- **Sync (Initiator):** Starts the program and stores encrypted messages.
-- **User (Responder):** Creates a SyncID, inputs sensitive data, and securely interacts with Sync.
-- **Delivery Node:** The User's local device that decrypts messages using its private key.
+- **Sync (Initiator):** Initiates the program, triggers notifications, and manages data through Nillion's network.
+- **User (Responder):** Creates a SyncID, attaches sensitive data, and interacts with Sync using Nillion's secure computation.
+- **Delivery Node (User's Local Device):** The device where decryption occurs, using the Sync mobile app to access the message securely.
 
 ## Process Flow
 
-1. **SyncID Creation:** User creates a SyncID, inputs their phone number, which is stored locally.
-2. **Program Initialization:** Sync initiates the program and invites the User to accept.
-3. **User Input:** User shares their SyncID and hashed secret identifier.
-4. **Secure Computation:** The logic matches the hashed identifiers from Sync and the User.
-   - If they match, the encrypted message is revealed to the delivery node.
-5. **Decryption:** User’s device decrypts the message locally and sends it via WhatsApp or Telegram.
+1. **SyncID Creation:** The User creates a SyncID and attaches sensitive details (like their WhatsApp number) to it. This information is securely stored on the Nillion network with a unique secret.
+   
+2. **Data Storage on Nillion:** The sensitive information linked to the SyncID is encrypted and stored in Nillion's decentralized network.
+
+3. **Notification Trigger:** When a notification is generated in the Sync network for delivery to a specific SyncID, it is directed to the User's delivery node (local device) via the Sync mobile app.
+
+4. **Secret Matching:** The Sync app on the delivery node securely matches the secret identifier provided by both Sync and User with the encrypted data stored in Nillion's network.
+   - If the secret identifiers match, Nillion facilitates the secure decryption of the message locally on the delivery node.
+
+5. **Decryption and Message Delivery:** The decrypted message is accessed locally on the User's device, and the Sync app triggers the delivery to WhatsApp or Telegram using the decrypted data.
+
+## Security Features
+
+- **Local Decryption:** Sensitive data is decrypted only on the User's device, ensuring privacy.
+- **Data Integrity:** The logic matching and validation are securely handled by Nillion without exposing sensitive information.
+- **Decentralized Execution:** Leverages Nillion’s infrastructure for secure computation and encrypted data handling.
 
 ## Usage
 
-Run the following commands to start the secure computation process:
+To start the secure computation and interaction process, execute the following commands:
 
 ```bash
 python compute.py
